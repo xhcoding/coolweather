@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="weather_key"
+            android:value="7618dec875c448c3b4e0aa3a4d6870e0" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +23,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".WeatherActivity">
-            <meta-data
-                android:name="weather_key"
-                android:value="7618dec875c448c3b4e0aa3a4d6870e0" />
+
         </activity>
+
+        <service
+            android:name=".service.AutoUpdateService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
