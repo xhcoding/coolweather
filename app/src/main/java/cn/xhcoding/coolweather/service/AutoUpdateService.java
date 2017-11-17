@@ -57,7 +57,7 @@ public class AutoUpdateService extends Service {
             String weatherId = weather.basic.weatherId;
             String weatherUrl = getResources().getString(R.string.server_query_weather) + "?cityid=" +
                     weatherId + "&key=" + key;
-            HttpUtil.sendOkHttpRequest(weatherId, new okhttp3.Callback() {
+            HttpUtil.sendOkHttpRequest(weatherUrl, new okhttp3.Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
                     e.printStackTrace();
