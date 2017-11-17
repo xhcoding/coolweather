@@ -19,6 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".WeatherActivity">
+            <meta-data
+                android:name="weather_key"
+                android:value="7618dec875c448c3b4e0aa3a4d6870e0" />
+        </activity>
     </application>
 
 </manifest>

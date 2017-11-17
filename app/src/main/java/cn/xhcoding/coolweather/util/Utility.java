@@ -2,12 +2,14 @@ package cn.xhcoding.coolweather.util;
 
 import android.text.TextUtils;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import cn.xhcoding.coolweather.db.City;
 import cn.xhcoding.coolweather.db.County;
 import cn.xhcoding.coolweather.db.Province;
+import cn.xhcoding.coolweather.fastjson.Weather;
 
 /**
  * Author: xhcoding
@@ -69,5 +71,16 @@ public class Utility {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 将返回的json数据解析成Weather实体类
+     */
+
+    public static Weather handleWeatherResponse(String response) {
+        JSONObject jsonObject = JSONObject.parseObject(response);
+        JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+        String weatherContent = jsonArray.getJSONObject(0).toString();
+        return JSON.parseObject(weatherContent, Weather.class);
     }
 }
