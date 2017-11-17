@@ -1,12 +1,14 @@
 package cn.xhcoding.coolweather.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Author: xhcoding
  * Date: 17-11-16
  * 记录县的名字，对应的天气id和所属市的id
  */
 
-public class County {
+public class County extends DataSupport {
     private int id;
 
     private String countyName;
